@@ -612,7 +612,7 @@ function submitForm(e) {
   const phone = document.getElementById('fPhone').value.trim();
   if(!name || !phone) { e.preventDefault(); return; }
   // Динамічно встановлюємо _next на поточний домен
-  document.getElementById('formNext').value = window.location.origin + '/thankyou.html';
+  document.getElementById('formNext').value = 'https://vitalkess.github.io/gewelry/thankyou.html';
   const btn = e.target.querySelector('button[type=submit]');
   btn.disabled = true;
   btn.textContent = 'Надсилаємо…';

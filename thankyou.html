@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Дякуємо за замовлення — Срібна Каблучка «Я кохаю тебе»</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2006373556754676');
+fbq('track', 'PageView');
+fbq('track', 'Purchase', {
+  value: 2470,
+  currency: 'UAH',
+  content_name: 'Срібна Каблучка «Я кохаю тебе» з золотими вставками',
+  content_type: 'product',
+  content_ids: ['452']
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2006373556754676&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --gold:#c9a84c;--gold-light:#e8c97a;
+    --dark:#1a1a2e;--dark2:#2d1b35;
+    --white:#fff;--cream:#fdf8f5;
+  }
+  html,body{height:100%;}
+  body{
+    font-family:'Georgia',serif;
+    background:linear-gradient(160deg,var(--dark) 0%,var(--dark2) 50%,#1a1030 100%);
+    min-height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    padding:24px 20px;overflow:hidden;position:relative;
+    max-width:480px;margin:0 auto;
+  }
+
+  /* floating hearts bg */
+  .hearts-bg{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+  .heart-p{position:absolute;font-size:20px;opacity:0;
+    animation:floatHeart linear infinite;}
+  @keyframes floatHeart{
+    0%{transform:translateY(110vh) rotate(-15deg);opacity:0;}
+    10%{opacity:.35;}
+    90%{opacity:.2;}
+    100%{transform:translateY(-10vh) rotate(15deg);opacity:0;}
+  }
+
+  /* card */
+  .card{
+    position:relative;z-index:1;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(201,168,76,.25);
+    border-radius:28px;
+    padding:40px 28px 36px;
+    text-align:center;
+    max-width:400px;width:100%;
+    box-shadow:0 20px 60px rgba(0,0,0,.4),
+               inset 0 1px 0 rgba(255,255,255,.08);
+  }
+
+  /* ring icon animation */
+  .ring-icon{
+    font-size:64px;margin-bottom:6px;
+    display:inline-block;
+    animation:ringBounce 1s ease .3s both;
+  }
+  @keyframes ringBounce{
+    0%{transform:scale(0) rotate(-20deg);opacity:0;}
+    60%{transform:scale(1.2) rotate(5deg);opacity:1;}
+    80%{transform:scale(.95) rotate(-2deg);}
+    100%{transform:scale(1) rotate(0deg);opacity:1;}
+  }
+
+  /* sparkles */
+  .sparkles{font-size:22px;margin-bottom:20px;
+    animation:fadeIn .6s ease 1s both;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+  h1{
+    color:var(--white);font-size:26px;font-style:italic;
+    line-height:1.3;margin-bottom:10px;
+    animation:fadeIn .6s ease .5s both;
+  }
+  h1 span{color:var(--gold-light);}
+
+  .subtitle{
+    color:rgba(255,255,255,.6);font-family:sans-serif;
+    font-size:14px;line-height:1.6;margin-bottom:28px;
+    animation:fadeIn .6s ease .7s both;
+  }
+  .subtitle strong{color:var(--gold-light);}
+
+  /* steps */
+  .steps{
+    display:flex;flex-direction:column;gap:12px;
+    margin-bottom:30px;text-align:left;
+    animation:fadeIn .6s ease .9s both;
+  }
+  .step{
+    display:flex;align-items:flex-start;gap:12px;
+    background:rgba(255,255,255,.05);
+    border-radius:14px;padding:12px 14px;
+    border:1px solid rgba(255,255,255,.07);
+  }
+  .step-num{
+    width:28px;height:28px;border-radius:50%;flex-shrink:0;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:#1a1010;font-family:sans-serif;font-size:12px;font-weight:bold;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step-text{font-family:sans-serif;font-size:13px;color:rgba(255,255,255,.75);line-height:1.5;}
+  .step-text strong{color:var(--white);display:block;margin-bottom:1px;font-size:13px;}
+
+  /* CTA back */
+  .btn-back{
+    display:inline-block;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:#1a1010;border:none;padding:14px 32px;border-radius:50px;
+    font-size:15px;font-weight:bold;font-family:sans-serif;
+    text-decoration:none;cursor:pointer;
+    box-shadow:0 4px 20px rgba(201,168,76,.35);
+    animation:fadeIn .6s ease 1.1s both;
+    transition:transform .15s;
+  }
+  .btn-back:active{transform:scale(.97);}
+
+  .note{
+    margin-top:16px;font-family:sans-serif;font-size:11px;
+    color:rgba(255,255,255,.25);
+    animation:fadeIn .6s ease 1.2s both;
+  }
+</style>
+</head>
+<body>
+
+<!-- floating hearts -->
+<div class="hearts-bg" id="heartsBg"></div>
+
+<div class="card">
+  <div class="ring-icon">💍</div>
+  <div class="sparkles">✨ ♡ ✨</div>
+
+  <h1>Дякуємо за<br><span>замовлення!</span></h1>
+
+  <p class="subtitle">
+    Ми отримали вашу заявку і зв'яжемося з вами<br>
+    протягом <strong>15 хвилин</strong>.<br>
+    Незабаром ваша кохана отримає найкращий подарунок ♡
+  </p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text"><strong>Підтвердження замовлення</strong>Менеджер зателефонує і уточнить деталі</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>Відправлення</strong>Упакуємо в подарункову коробочку і відправимо Новою Поштою</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Оплата при отриманні 💚</strong>Оплачуєте тільки коли тримаєте каблучку в руках</div>
+    </div>
+  </div>
+
+  <a href="/" class="btn-back">← Повернутись на сторінку</a>
+
+  <p class="note">💌 camelliashop.com.ua</p>
+</div>
+
+<script>
+// Generate floating hearts
+const bg = document.getElementById('heartsBg');
+const symbols = ['♡','💕','✨','💛','🤍'];
+for(let i=0;i<18;i++){
+  const el=document.createElement('span');
+  el.className='heart-p';
+  el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.left=Math.random()*100+'vw';
+  el.style.animationDuration=(6+Math.random()*8)+'s';
+  el.style.animationDelay=(Math.random()*6)+'s';
+  el.style.fontSize=(14+Math.random()*18)+'px';
+  bg.appendChild(el);
+}
+</script>
+</body>
+</html>

@@ -536,20 +536,14 @@ src="https://www.facebook.com/tr?id=2006373556754676&ev=PageView&noscript=1"
   <div id="orderFormWrap">
     <div class="order-title">Оформити замовлення</div>
     <div class="order-sub">Заповніть форму — і ми зв'яжемося протягом 15 хвилин</div>
-    <form class="order-form" id="orderForm" action="https://formsubmit.co/vitalkess@gmail.com" method="POST" onsubmit="submitForm(event)">
-      <input type="hidden" name="_subject" value="🔔 Нове замовлення — Срібна Каблучка «Я кохаю тебе»">
-      <input type="hidden" name="_next" id="formNext" value="https://vitalkess.github.io/gewelry/thankyou.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="Товар" value="Срібна Каблучка «Я кохаю тебе» з золотими вставками">
-      <input type="hidden" name="Ціна" value="2 470 грн (знижка −30%)">
-      <input type="hidden" name="Оплата" value="При отриманні">
+    <form class="order-form" id="orderForm" onsubmit="submitForm(event)">
       <div class="fg">
         <label>Ваше ім'я</label>
-        <input type="text" name="Ім'я" id="fName" placeholder="Наприклад: Олена" required autocomplete="given-name">
+        <input type="text" id="fName" placeholder="Наприклад: Олена" required autocomplete="given-name">
       </div>
       <div class="fg">
         <label>Номер телефону</label>
-        <input type="tel" name="Телефон" id="fPhone" placeholder="+380 __ ___ __ __" required autocomplete="tel">
+        <input type="tel" id="fPhone" placeholder="+380 __ ___ __ __" required autocomplete="tel">
       </div>
       <button type="submit" class="btn-order">✦ Замовити — 2 470 ₴ (−30%) ✦</button>
     </form>
@@ -608,14 +602,21 @@ function hideStickyTemp() {
 
 // Form submit
 function submitForm(e) {
+  e.preventDefault();
   const name = document.getElementById('fName').value.trim();
   const phone = document.getElementById('fPhone').value.trim();
-  if(!name || !phone) { e.preventDefault(); return; }
-  // Динамічно встановлюємо _next на поточний домен
-  document.getElementById('formNext').value = 'https://vitalkess.github.io/gewelry/thankyou.html';
+  if(!name || !phone) return;
   const btn = e.target.querySelector('button[type=submit]');
   btn.disabled = true;
   btn.textContent = 'Надсилаємо…';
+  const text = `💍 Нове замовлення!\n\n👤 Ім'я: ${name}\n📞 Телефон: ${phone}\n\n🛍 Товар: Срібна Каблучка «Я кохаю тебе»\n💰 Ціна: 2 470 ₴ (−30%)\n💚 Оплата при отриманні`;
+  fetch(`https://api.telegram.org/bot8602823641:AAFDffHgT_0LNv_ZkA2hSlsgt9uDxfdIsHE/sendMessage`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({chat_id: 5071692828, text})
+  })
+  .then(() => { window.location.href = 'https://vitalkess.github.io/gewelry/thankyou.html'; })
+  .catch(() => { window.location.href = 'https://vitalkess.github.io/gewelry/thankyou.html'; });
 }
 
 // ---- VIDEO click-to-play ----
